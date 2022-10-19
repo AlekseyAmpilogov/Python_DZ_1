@@ -1,0 +1,40 @@
+
+
+# def Truth ():
+#     result = True
+
+#     for n in range(0, 8):
+#         num = bin(n) # bin - преобразование целого числа в двоичную строку
+#         num = num.replace('b', '0')
+#         X = int(num[-3])
+#         Y = int(num[-2])
+#         Z = int(num[-1])
+#         result = result and (not(X or Y or Z)) == ((not X) and (not Y) and (not Z))
+
+#     print(result)
+
+
+# Truth()
+
+
+def inputNumbers(x):
+    xyz = ["X", "Y", "Z"]
+    a = []
+    for i in range(x):
+        a.append(input(f"Введите значение {xyz[i]}: "))
+    return a
+
+
+def checkPredicate(x):
+    left = not (x[0] or x[1] or x[2])
+    right = not x[0] and not x[1] and not x[2]
+    result = left == right
+    return result
+
+
+statement = inputNumbers(3)
+
+if checkPredicate(statement) == True:
+    print(f"Утверждение истинно")
+else:
+    print(f"Утверждение ложно")
